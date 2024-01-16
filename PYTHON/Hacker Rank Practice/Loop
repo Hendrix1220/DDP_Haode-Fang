@@ -1,0 +1,10 @@
+if __name__ == '__main__':
+    n = int(input())
+    i=0
+    for i in range(0,n):
+        print(i*i)       #for循环需要注意的点是for 循环参数in 范围。  冒号后面是操作～并且不需要自己设置增加的条件，会自己循环
+
+    i=0
+    while i<n:
+    print(i*i)
+    i+=1   #while循环有点像if语句只判断一次 需要你自己设置第二次循环的方式
