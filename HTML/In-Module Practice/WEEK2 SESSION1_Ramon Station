@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<!-- saved from url=(0085)https://moodle.warwick.ac.uk/pluginfile.php/3669678/mod_resource/content/1/ramen.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Warwick Ramen Stand</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                background-color: #f8f8f8;
+                color: #333;
+            }
+
+            .header {
+                background-color: #ff6f61;
+                color: white;
+                text-align: center;
+                padding: 10px 0;
+                Text-shadow:10px 5px 3px green;
+                font-size: 20;
+                background-color: #333;
+            }
+
+            .content {
+                padding: 20px;
+            }
+
+            #ramen-menu {
+                background-color: #ffe6cc;
+                padding: 15px;
+                border-radius: 5px;
+            }
+
+            .menu-item {
+                color: #ff4500;
+                font-weight: italic;
+            }
+
+            .footer {
+                background-color: #333;
+                color: white;
+                text-align: center;
+                padding: 5px 0;
+                position: fixed;
+                bottom: 0;
+                width: 100%;
+            }
+            .openinghours{
+                color: #ff4500;
+                font-weight: italic;
+                font-size: larger;
+            }
+                
+        
+        </style>
+    </head>
+
+    <body>
+
+        <div class="header">
+            <h1 id="stand-name">Warwick Ramen Stand</h1>
+           
+        </div>
+
+        <div class="content">
+            <p>Discover the authentic taste of Japan!</p>
+            <a href="http://www.warwick.ac.uk"> University of Warwick</a>
+            <div id="ramen-menu">
+                <h2>Our Menu</h2>
+                <p class="openinghours">opening hours: MON-FRI 11am-8pm</p>
+                <p class="menu-item">Tonkotsu Ramen</p>
+                <img src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fss2.meipian.me%2Fusers%2F56499267%2F62ede039ac2b4b7a8c0c98b93f67116d.jpeg%3Fmeipian-raw%2Fbucket%2Fivwen%2Fkey%2FdXNlcnMvNTY0OTkyNjcvNjJlZGUwMzlhYzJiNGI3YThjMGM5OGI5M2Y2NzExNmQuanBlZw%3D%3D%2Fsign%2F121cfea498dee20a1afc7782a202331f.jpg&refer=http%3A%2F%2Fss2.meipian.me&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1707911160&t=8dadeb188b86cee1d95647f7a94236be" alt="image of noodles" alt width="100px" height="50px">
+                <p class="menu-item">Shoyu Ramen</p>
+                <p class="menu-item">Miso Ramen</p>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>Visit us outside MEC!</p>
+        </div>
+
+    
+
+</body></html>
