@@ -1,0 +1,5 @@
+if __name__ == '__main__':
+    a = int(input())
+    b = int(input())
+    print(a//b)#//这个符号返回的是 整除的结果 类似于取余%
+    print(a/b)#这个返回的是float的结果
