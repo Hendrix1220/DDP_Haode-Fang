@@ -1,0 +1,78 @@
+.headerclass {
+    background-color: aqua;
+    text-align: centre;
+}
+
+.navigationmenu {
+    list-style: none;
+    font-style: normal;
+    margin: 20px 20px;
+
+}
+
+.ourmenu {
+    font-style: normal;
+    margin: 20px 20px;
+}
+
+#pic1 {
+    max-width: 100%;
+    height: auto
+}
+
+#pic2 {
+    max-width: 100%;
+    height: auto
+}
+
+#pic3 {
+    max-width: 100%;
+    height: auto
+}
+
+#pic4 {
+    max-width: 100%;
+    height: auto
+}
+
+.openinghours thead {
+    font-weight: 700;
+    font-style: oblique;
+    color: blue;
+
+}
+
+.openinghours tbody {
+    font-style: italic;
+    color: green;
+    border: 0.5px;
+}
+
+#foot {
+    background-color: aquamarine;
+    text-align: center;
+}
+
+th {
+    border-bottom: 1px solid #ddd;
+}
+
+td {
+    border-bottom: 0.5px solid green;
+}
+
+.navlink {
+    text-decoration: none;
+    color: black;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.navlink:hover {
+    background-color: blueviolet;
+}
+
+.navlink:active {
+    background-color: red;
+    color: blue
+}
