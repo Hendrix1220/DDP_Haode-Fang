@@ -1,0 +1,42 @@
+"""
+Date Scheduler Function
+
+Objective:
+Write a function named 'date_passed' to determine the relationship between two dates.
+
+Function Parameters:
+1. todays_date (string): The current date in the format 'day Month'.
+2. scheduled_date (string): The scheduled date to compare, in the same format.
+
+Instructions:
+- The function should compare todays_date and scheduled_date and print whether the scheduled date has passed, is yet to pass, or is today.
+- Assume the dates are in the same year.
+- The dates are in a format like '26th March'. Consider how to convert these for comparison.
+- https://www.w3schools.com/python/python_datetime.asp
+
+Example Test Cases:
+1. date_passed('26th March', '25th March') should indicate that the scheduled date has passed.
+2. date_passed('26th March', '26th March') should indicate that the scheduled date is today.
+3. date_passed('26th March', '27th March') should indicate that the scheduled date is yet to pass.
+"""
+
+from datetime import datetime
+def date_passed(todays_date, scheduled_date):
+    date_format = "%dth %B" #先定义日期原始的格式 
+    today = datetime.strptime(todays_date, date_format)#strptime的用途就是把不同类型的日期格式转换数值型 注意的是后面两个参数 分别是 元变量以及被转换的形式
+    scheduled = datetime.strptime(scheduled_date, date_format)#datetime导入  用strptime时候一定是datetime.strptime 原先的变量放在后面括号里面呢
+    if today < scheduled:
+        print("The scheduled date is yet to pass.")
+    elif today > scheduled:
+        print("The scheduled date has passed.")
+    else:
+        print("The scheduled date is today.")
+    # Your code goes here
+    # Implement the logic to compare the dates and print the appropriate message
+    
+
+
+# Test cases
+date_passed("26th March", "25th March")  # Expected: Scheduled date has passed
+date_passed("26th March", "26th March")  # Expected: Scheduled date is today
+date_passed("26th March", "27th March")  # Expected: Scheduled date is yet to pass
