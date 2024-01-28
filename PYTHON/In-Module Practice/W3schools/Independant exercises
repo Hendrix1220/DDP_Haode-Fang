@@ -1,0 +1,202 @@
+#1、变量：
+    #变量在你给他赋值的时候就自己生成了～ 比如product=[] 就直接生成了一个list不需要类型名字 不需要单独的创建变量的语句
+    #！不需要单独的语句 不需要带类型
+
+    #变量指定类型直接类型加（）；变量类型展示 直接type（）；
+
+    #变量名只能包括数字 字母 下划线 且不能以数字开头
+
+    #多个变量赋值：一个一个对应 或者用list
+fruits = ["apple", "banana", "cherry"]
+x, y, z = fruits
+print(x)
+print(y)
+print(z)
+    #全局变量和局部变量
+x = "awesome"
+
+def myfunc():
+  x = "fantastic"
+  print("Python is " + x)
+
+myfunc()
+
+print("Python is " + x)
+
+#2、数据类型
+    #需要掌握的num str  list tuple dict bool
+
+
+#3、数值类型 int float complex
+    #float类型用科学技术法表示 就用e来代表 3.5e3表示3.5✖️10的三次方
+    #数值类型之间的转换：注意float类型向int转换是直接去小数点而不是四舍五入！！
+
+x = 1    # int
+y = 2.8  # float
+z = 1j   # complex
+
+#convert from int to float:
+a = float(x)
+
+#convert from float to int:
+b = int(y)
+
+#convert from int to complex:
+c = complex(x)
+
+print(a)
+print(b)
+print(c)
+
+print(type(a))
+print(type(b))
+print(type(c))
+
+    #生成随机数的代码
+import random
+print(random.randrange(2,6))#这里有一个很重要的点就是import的东西 你需要引用包里的函数一定要。一下
+
+
+#4、字符串有关操作
+    #a、多行字符串也用三引号
+    #字符串其实是一个序列 每一个字符可以直接用[]拿出来
+    #字符串的切片str1[2:5] str2[:5] str3[2:]    负数的切片表示从后往前数 -1是最后一个
+
+    #b、遍历字符串里面的字符：
+for x in "banana":
+  print(x)
+    #字符串的长度
+print(len("apple"))
+
+    #字符串里面查找 直接用if语句就可以的：if xxx in str1: if xxx not in str2:
+
+
+    #c、字符串的修改：.upper(str1).lower(str2) .strip(str3)
+    #.replace后面有两个参数 
+    #.split表示把字符串分成list里面的不同项
+a = "Hello, World!"
+print(a.split(",")) # returns ['Hello', ' World!']
+    #直接用加号表示加法
+print(type(a.split(",")))
+
+
+    #d、重中之重：format字符串：把数字插入字符串当中去
+height=185
+str1="his height is {}".format(height)
+print(str1)#先输入一个{}再输入一个。format 括号里是数字
+#有多个括号的时候 可以在大括号来加定位数字 来和小括号里的顺序对应
+
+    #e、escape character
+    #非法字符想要出现在字符串里 那么在非法字符前面加一个\反斜线
+    #\n表示换行 \b表示空格 \t表示占位符
+
+
+    #f、其他函数
+    # isalpha()  是不是用来判断整体是不是全部都是字符或者数字   isalnum 是不是数字  isupper/lower  captilise只有首字母大写  count（）计算某一个东西出现的次数？
+print("fang!haode".count("a"))
+
+
+#5、booleans有关操作
+#6、运算符：非常重要！
+    #x**y x的y次方
+    #//表示整除   等到的是取余的另外一个部分
+    #连续表达：x+=1 x*=1...
+
+    # and or not
+    # is /is not
+
+
+
+#7、list【重要】
+    #list里面切片或者定位：
+    #list里面插入到指定位置：list.insert(2,"item")
+    #往list里面加东西 list.append()
+    #删除一个项 remove（内容） 或者关键字del  删除指定位置的用pop（位置）清空内容clear
+
+    #list循环  len可以直接取list的长度
+thislist = ["apple", "banana", "cherry"]
+for x in thislist:
+  print(x)
+
+fruits = ["apple", "banana", "cherry", "kiwi", "mango"]
+
+newlist = [x for x in fruits if "a" in x]#单行简化从一个list提取内容到另外一个list的过程
+print(newlist)
+
+
+    #list的排序：
+    #list.sort()   如果想要降序排列 那么就括号里加上参数 reverse==true   这个排序是大小写敏感的 key=str.lower
+    #特殊要求的排序 离谁近用abs来取绝对值 括号里的参数 key==函数
+
+    #两个list合并用+ 或者extend 往里面加东西用append
+
+
+
+#ps. count用于数鸭子 比如数a    len计算整体总长度
+
+
+
+#8、dict
+    #定义：dict里面可以key：value 这个value可以是很多类型 也可以是list
+    #获取value：
+thisdict = {
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+x = thisdict["model"] #直接用[]去索引就可以啦
+print(x)
+
+    #得到keys全部    thisdict.keys()
+    #得到values全部  thisdict.values()
+    #thisdict.items()
+
+    #改变值
+    #新增item 直接用语句   thisdict[key]=value就好了     注意一定是等于号
+dict1={"apple":5,"banana":3,"pear":10}
+dict1["peach"]=18
+print(dict1)
+    #pop的删除是要有参数的 根据key来删除 
+dict1.pop("pear")
+print(dict1)
+    #del可以删除整个dict 也可以删除一个item
+
+    #遍历直接用 for x in dict   就可以  也可以结合 keys values items函数
+    
+
+
+#重点：网状 dict
+
+
+
+
+
+
+
+
+
+#----------------------分界线-----------------------
+#1、if语句：
+#2、while语句：while语句一定要加上循环限制的i不然他会一直循环
+    #break可以直接跳出循环  contiune进行下一次迭代罢了
+#3、for语句  for语句里面的index不需要提前设置
+    #range表示以1为间隔生成一些数字 当然也可以设置步长为第三个参数
+
+
+
+#----------------------分界线-----------------------
+#1、函数 参数是list 返回值也是list
+#2、date：
+#import datetime      strftime的用法必须要会
+
+import datetime
+
+x = datetime.datetime.now()
+print(x)
+
+y=datetime.datetime.now()
+z=y.strftime("%B-%dth")
+print(z)
+
+
+
