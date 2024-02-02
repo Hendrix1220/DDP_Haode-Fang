@@ -1,0 +1,44 @@
+#nav_contactus {
+    text-align: right;
+}
+
+#nav_login {
+    text-align: right;
+}
+
+.nav nav-pills {
+    color: aliceblue
+}
+
+.carousel-inner {
+    max-height: 600px;
+}
+
+
+
+.custom-container {
+    margin-left: 2px;
+    /* 你想要的左边距 */
+    margin-right: 2px;
+    /* 你想要的右边距 */
+}
+
+.text-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#ddcard {
+    line-height: 1.5;
+
+}
+
+.card-img-top {
+    width: 100%;
+    height: auto;
+}
+
+.container-md {
+    margin-top: 20px;
+}
