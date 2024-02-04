@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+            flex-direction: column;
+            display: flex;
+            min-height: 100vh;
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+            margin-top: 20px;
+            /* Add margin to center the text vertically */
+        }
+
+        .content {
+            flex-grow: 1;
+            /* Expand to fill remaining vertical space */
+            display: flex;
+            justify-content: center;
+            /* Center horizontally */
+            align-items: center;
+            /* Center vertically */
+
+        }
+
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            width: 300px;
+            text-align: left;
+        }
+
+        form div {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        input[type="email"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="/templates/styles.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="{{url_for('index')}}">
+                <img src="/static/images/logo.png" alt="Logo" style="height: 60px; width: 60px;">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="{{url_for('index')}}">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="{{url_for('all_restaurants')}}" id="navbarDropdown"
+                            role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Restaurants
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="{{url_for('DirtyDuck')}}">Dirty
+                                    Duck</a></li>
+                            <li><a class="dropdown-item" href="{{url_for('WBSCafe')}}">WBS
+                                    cafe</a></li>
+                            <li><a class="dropdown-item" href="{{url_for('Varsity')}}">Varsity</a>
+                            </li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="{{url_for('all_restaurants')}}">All
+                                    Restaurants</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="{{url_for('all_cafes')}}"
+                            role="button" aria-expanded="false">Cafes</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="{{url_for('Cosco')}}">Cosco</a>
+                            </li>
+                            <li><a class="dropdown-item" href="{{url_for('Starbucks')}}">Starbucks</a></li>
+                            <li><a class="dropdown-item" href="{{url_for('Pret')}}">Pret</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="{{url_for('all_cafes')}}">All
+                                    Cafes</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown"
+                            href="{{url_for('all_foodstations')}}" role="button" aria-expanded="false">Food
+                            Stations</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="{{url_for('Thaifood')}}">Thai
+                                    Food</a></li>
+                            <li><a class="dropdown-item" href="{{url_for('ChineseRamen')}}">Chinese Ramen</a></li>
+                            <li><a class="dropdown-item" href="{{url_for('ItalyTaco')}}">Italy
+                                    Taco</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="{{url_for('all_foodstations')}}">All Food
+                                    Stations</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item" id="nav_contactus">
+                        <a class="nav-link" href="{{url_for('ContactUs')}}">Contact us</a>
+                    </li>
+                    <li class="nav-item" id="nav_login">
+                        <a class="nav-link" href="{{url_for('login')}}">Login</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <h2>Sign Up</h2>
+
+    <div class="content"> <!-- Create a container for the content -->
+        <form action="/signup" method="post">
+            <!-- You need to set the action to the URL that will handle the signup logic -->
+            <div>
+                <label for="accountNumber">Account Number:</label>
+                <input type="text" id="accountNumber" name="accountNumber" required>
+            </div>
+            <div>
+                <label for="firstName">First Name:</label>
+                <input type="text" id="firstName" name="firstName" required>
+            </div>
+            <div>
+                <label for="lastName">Last Name:</label>
+                <input type="text" id="lastName" name="lastName" required>
+            </div>
+            <div>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div>
+                <label for="contactNumber">Contact Number:</label>
+                <input type="text" id="contactNumber" name="contactNumber" required>
+            </div>
+            <div>
+                <label for="password">Your Password:</label>
+                <input type="password" id="password" name="password" required>
+                <!-- 添加复选框允许用户选择是否显示密码 -->
+                <input type="checkbox" id="togglePassword"> 👀
+            </div>
+            <button type="submit">Sign Up</button>
+
+            <script>
+                document.getElementById('togglePassword').addEventListener('click', function (e) {
+                    // 根据复选框的状态切换密码字段的类型
+                    const passwordInput = document.getElementById('password');
+                    if (this.checked) {
+                        passwordInput.type = 'text';
+                    } else {
+                        passwordInput.type = 'password';
+                    }
+                });
+            </script>
+
+
+
+
+            <!-- <div>
+                <label for="YourPassword">YourPassword:</label>
+                <input type="password" id="YourPassword" name="YourPassword" required>
+                
+            </div>
+            <div>
+                <button type="submit">Sign Up</button>
+            </div> -->
+        </form>
+    </div>
+</body>
+
+
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="/templates/styles.css">
+</head>
+
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="{{url_for('index')}}">
+                <img src="/static/images/logo.png" alt="Logo" style="height: 60px; width: 60px;">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="{{url_for('index')}}">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="{{url_for('all_restaurants')}}" id="navbarDropdown"
+                            role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Restaurants
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="{{url_for('DirtyDuck')}}">Dirty
+                                    Duck</a></li>
+                            <li><a class="dropdown-item" href="{{url_for('WBSCafe')}}">WBS
+                                    cafe</a></li>
+                            <li><a class="dropdown-item" href="{{url_for('Varsity')}}">Varsity</a>
+                            </li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="{{url_for('all_restaurants')}}">All
+                                    Restaurants</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="{{url_for('all_cafes')}}"
+                            role="button" aria-expanded="false">Cafes</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="{{url_for('Cosco')}}">Cosco</a>
+                            </li>
+                            <li><a class="dropdown-item" href="{{url_for('Starbucks')}}">Starbucks</a></li>
+                            <li><a class="dropdown-item" href="{{url_for('Pret')}}">Pret</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="{{url_for('all_cafes')}}">All
+                                    Cafes</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown"
+                            href="{{url_for('all_foodstations')}}" role="button" aria-expanded="false">Food
+                            Stations</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="{{url_for('Thaifood')}}">Thai
+                                    Food</a></li>
+                            <li><a class="dropdown-item" href="{{url_for('ChineseRamen')}}">Chinese Ramen</a></li>
+                            <li><a class="dropdown-item" href="{{url_for('ItalyTaco')}}">Italy
+                                    Taco</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="{{url_for('all_foodstations')}}">All Food
+                                    Stations</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item" id="nav_contactus">
+                        <a class="nav-link" href="{{url_for('ContactUs')}}">Contact us</a>
+                    </li>
+                    <li class="nav-item" id="nav_login">
+                        <a class="nav-link" href="{{url_for('login')}}">Login</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <main>
+        <section id="contact-information">
+            <h2>Contact Information</h2>
+            <p>Please find below the contact details of the University of Warwick:</p>
+            <ul>
+                <li><strong>Address:</strong> University of Warwick, Coventry, CV4 7AL, UK</li>
+                <li><strong>Contact Number:</strong> +44 (0)24 7652 3523</li>
+                <li><strong>Email:</strong> <a href="mailto:info@warwick.ac.uk">info@warwick.ac.uk</a></li>
+                <!-- You can add more contact details here -->
+            </ul>
+        </section>
+        <section id="additional-information">
+            <h2>Additional Information</h2>
+            <p>For further assistance or enquiries, you may also contact our departments directly:</p>
+            <ul>
+                <li>Admissions: <a href="mailto:admissions@warwick.ac.uk">admissions@warwick.ac.uk</a></li>
+                <li>Student Support: <a href="mailto:studentsupport@warwick.ac.uk">studentsupport@warwick.ac.uk</a></li>
+                <!-- Additional contacts or information can be added here -->
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 University of Warwick. All rights reserved.</p>
+        <!-- Footer links or legal information -->
+    </footer>
+</body>
+
+</html>

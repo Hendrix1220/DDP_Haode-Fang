@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="/templates/styles.css">
+    <title>Your Restaurant Name</title>
+    <style>
+        /* Basic styling */
+        body {
+            font-family: 'Arial', sans-serif;
+            color: #333;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+
+
+        .container {
+            display: flex;
+            justify-content: space-around;
+            margin: 20px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin: 10px;
+        }
+
+        .left-column {
+            flex: 1;
+            /* Make left column thinner */
+            margin-right: 20px;
+        }
+
+        .right-column {
+            flex: 2;
+            /* Make right column wider */
+            display: flex;
+            flex-direction: column;
+        }
+
+        .button {
+            display: inline-block;
+            width: auto;
+            padding: 10px 20px;
+            margin-top: 10px;
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .button:hover {
+            background-color: #45a049;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+
+            .left-column,
+            .right-column {
+                flex: none;
+                width: 100%;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="{{url_for('index')}}">
+                <img src="/static/images/logo.png" alt="Logo" style="height: 60px; width: 60px;">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="{{url_for('index')}}">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="{{url_for('all_restaurants')}}" id="navbarDropdown"
+                            role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Restaurants
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="{{url_for('DirtyDuck')}}">Dirty
+                                    Duck</a></li>
+                            <li><a class="dropdown-item" href="{{url_for('WBSCafe')}}">WBS
+                                    cafe</a></li>
+                            <li><a class="dropdown-item" href="{{url_for('Varsity')}}">Varsity</a>
+                            </li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="{{url_for('all_restaurants')}}">All
+                                    Restaurants</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="{{url_for('all_cafes')}}"
+                            role="button" aria-expanded="false">Cafes</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="{{url_for('Cosco')}}">Cosco</a>
+                            </li>
+                            <li><a class="dropdown-item" href="{{url_for('Starbucks')}}">Starbucks</a></li>
+                            <li><a class="dropdown-item" href="{{url_for('Pret')}}">Pret</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="{{url_for('all_cafes')}}">All
+                                    Cafes</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown"
+                            href="{{url_for('all_foodstations')}}" role="button" aria-expanded="false">Food
+                            Stations</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="{{url_for('Thaifood')}}">Thai
+                                    Food</a></li>
+                            <li><a class="dropdown-item" href="{{url_for('ChineseRamen')}}">Chinese Ramen</a></li>
+                            <li><a class="dropdown-item" href="{{url_for('ItalyTaco')}}">Italy
+                                    Taco</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="{{url_for('all_foodstations')}}">All Food
+                                    Stations</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item" id="nav_contactus">
+                        <a class="nav-link" href="{{url_for('ContactUs')}}">Contact us</a>
+                    </li>
+                    <li class="nav-item" id="nav_login">
+                        <a class="nav-link" href="{{url_for('login')}}">Login</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header>
+        <h1>Welcome to Our Restaurant!</h1>
+    </header>
+
+    <div class="container">
+
+        <div class="left-column">
+            <section class="menu-picture card">
+                <h2>Our Menu</h2>
+                <img src="/static/images/pic9.png" alt="Menu" class="menu-img">
+            </section>
+        </div>
+
+
+        <div class="right-column">
+            <section class="location-card card">
+                <h2>Location</h2>
+                <p>123 Food Street, Flavor Town, XY 12345</p>
+                <p>Phone: 123-456-7890</p>
+            </section>
+
+            <section class="opening-card card">
+                <h2>Opening Hours</h2>
+                <p>Monday - Friday: 10am - 10pm</p>
+                <p>Saturday - Sunday: 12pm - 12am</p>
+
+            </section>
+            <a href="{{url_for('booking')}}" class="button">Make a Booking</a>
+        </div>
+    </div>
+
+    <section class="information-card card">
+        <h2>About Us</h2>
+        <p>Welcome to our restaurant where we serve delicious meals...</p>
+
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Your Restaurant Name. All rights reserved.</p>
+    </footer>
+
+</html>
