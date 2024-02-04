@@ -1,1 +1,53 @@
+#breadcrumbs ul {
+    list-style: none;
+    padding: 10px;
+    background-color: #eee;
+}
 
+#breadcrumbs ul li {
+    display: inline;
+    margin: right 15px;
+}
+
+.producttitle {
+    text-align: center;
+    color: aqua;
+}
+
+.productimage img {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    height: auto
+}
+
+.productoptions {
+    text-align: center;
+    margin-top: 20px;
+
+}
+
+.sizeoptions {
+    margin-bottom: 10px;
+
+}
+
+.quantity {
+    margin-bottom: 10px;
+}
+
+.quantity select {
+    padding: 5px
+}
+
+.price {
+    font-size: 10;
+    font-weight: bold;
+}
+
+.addtobag {
+    background-color: yellow;
+    color: blue;
+    padding: 20px 20px;
+    cursor: pointer
+}
